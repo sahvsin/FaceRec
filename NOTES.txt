@@ -1,0 +1,33 @@
+Works with GPU
+
+TensorFlow (GPU) - 2.4.0
+Keras - 2.4.3
+CUDA - 11.0
+cudNN8 - 8.04
+
+GPU - RTX 3080 (EVGA FTW3 Ultra)
+Driver - 460.27.04 
+PCI ID - 0000:01:00.0
+
+
+
+Numa Node -1 value warning -- https://stackoverflow.com/questions/44232898/memoryerror-in-tensorflow-and-successful-numa-node-read-from-sysfs-had-negativ
+Not creating XLA devices warning -- https://github.com/tensorflow/tensorflow/issues/44683
+fixing the weird outdated CUDA stack, ptxas fatal: value "sm-86" is not defined warning/issue -- https://github.com/tensorflow/tensorflow/issues/45590
+
+when trying predict_on_batch, keep getting -> NotFoundError:  No algorithm worked!  (didn't encounter this back when I used my 2070 Super) 
+this snippet of code fixes this issue and program works now (with 3080 and current packages/libraries set up)
+	from tensorflow.compat.v1 import ConfigProto
+	from tensorflow.compat.v1 import InteractiveSession
+
+	config = ConfigProto()
+	config.gpu_options.allow_growth = True
+	session = InteractiveSession(config=config)
+
+
+
+
+
+
+
+

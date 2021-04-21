@@ -1,0 +1,7 @@
+CREDITS:
+
+--Credit to Schroff et al. for their research and paper on FaceNet, the model I use
+	link to paper - https://arxiv.org/abs/1503.03832
+
+--Credit to the CMU OpenFace team for providing open-source pre-trained weights for FaceNet
+  Weights are derived from training on CASIA-WebFace and FaceScrub datasets (total of 500k images)
