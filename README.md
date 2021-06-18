@@ -17,3 +17,16 @@ After taking a snapshot, it builds Google's [FaceNet](https://arxiv.org/abs/1503
 With the model trained, the system builds a database of 128-point vector encodings by processing each verified user's image through the FaceNet model.
 
 Finally, the system verifies the user by passing their taken image through the FaceNet model and computes the Euclidean distance (L2 norm) between its encoding and the associated encoding in the database. If the distance is below a threshold, the user is verified and the files become unlocked via chmod. Otherwise they get locked out. 
+
+<br><br>
+## Credits
+
+Please make sure to check out the CREDITS.txt file.  I couldn't have done this project without resources/papers provided by those credited.
+
+--Credit to Schroff et al. for their research and paper on FaceNet, the model I use
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;link to paper - https://arxiv.org/abs/1503.03832
+
+--Credit to the CMU OpenFace team for providing open-source pre-trained weights for FaceNet
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Weights are derived from training on CASIA-WebFace and FaceScrub datasets (total of 500k images)
